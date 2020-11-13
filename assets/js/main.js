@@ -14,6 +14,23 @@ if( !isNaN(kmViaggio) && !isNaN(etaPasseggero) ){
     kmViaggio=Number(kmViaggio);
     etaPasseggero=Number(etaPasseggero);
     console.log(kmViaggio, etaPasseggero);
+    var prezzoAlKm = 0.21;
+    var prezzoBiglietto = kmViaggio * prezzoAlKm;
+    console.log("Prezzo del biglietto: " + prezzoBiglietto + "€");
+    //Verifico se è necessario applicare uno sconto
+    var sconto = 0;
+    if(etaPasseggero < 18 ){
+        //Passeggero minorenne e applico lo sconto del 20%
+        sconto = prezzoBiglietto * 20 / 100;
+        console.log("Sconto del 20%: " + sconto);
+    } else if(etaPasseggero >= 65){
+        //Passeggero over 65 (lo interpreto come età a partire dai 65 anni in su)
+        sconto = prezzoBiglietto * 40 / 100;
+        console.log("Sconto del 40%: " + sconto);
+    }
+    //Sottraggo lo sconto al prezzoBiglietto (se lo sconto non è stato applicato sottraggo 0)
+    prezzoBiglietto = prezzoBiglietto - sconto;
+    console.log("Il prezzo finale del biglietto è: " + prezzoBiglietto.toFixed(2));
 }
 else{
     //console.log("Errore! Uno dei valori inseriti non era un numero!");
