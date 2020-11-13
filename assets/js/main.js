@@ -6,4 +6,16 @@
  * va applicato uno sconto del 40% per gli over 65
  *******************************************/
 
- 
+ var kmViaggio, etaPasseggero;
+kmViaggio = prompt("Inserisci il numero di km da percorrere");
+etaPasseggero = prompt("Inserisci la tua età");
+ //if di validazione dei dati (mi devo accertare che l'utente inserisca numeri per kmViaggio ed etaPasseggero)
+if( !isNaN(kmViaggio) && !isNaN(etaPasseggero) ){
+    kmViaggio=Number(kmViaggio);
+    etaPasseggero=Number(etaPasseggero);
+    console.log(kmViaggio, etaPasseggero);
+}
+else{
+    //console.log("Errore! Uno dei valori inseriti non era un numero!");
+    alert("Errore! Uno dei valori inseriti non era un numero!");
+}
